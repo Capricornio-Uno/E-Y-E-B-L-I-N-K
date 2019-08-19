@@ -11,6 +11,42 @@
 
 import time
 
+# ====================================== MAP ================================================
+
+class MapTile:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+
+	def intro_text(self):
+		raise NotImplementedError("Create a subclass instead!")
+
+class StartTile(MapTile):
+	def intro_text(self):
+		return """
+		This is the place where you woke up. There's only an enormous wall.
+		"""
+
+class ThreeCyborgsTile(MapTile):
+	def intro_text(self):
+		return """
+		There are lots of shelves full of dirt and junk. 
+		You can see a stand with three cyborgs on it. 
+		They look like they were abandoned for some unknown reason.
+		"""
+
+class CrystalMachineTile(MapTile):
+	def intro_text(self):
+		return """
+		Some sort of machinery is inside a crystal container with a built-in electromagnetic door.
+		The door seems operated from a panel on the right.
+		You look carefully at the panel and see a red button, a keypad and a holographic display.
+		"""
+
+room1_map = [
+	[ThreeCyborgsTile(0,2),StartTile(1,2),CrystalMachineTile(2,2)]
+]
+
 # ====================================== Objects ============================================
 
 class Object:
