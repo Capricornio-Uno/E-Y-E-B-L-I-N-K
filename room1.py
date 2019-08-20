@@ -21,18 +21,19 @@ class MapTile:
 	def intro_text(self):
 		raise NotImplementedError("Create a subclass instead!")
 
-class StartTile(MapTile):
-	def intro_text(self):
-		return """
-		This is the place where you woke up. There's only an enormous wall.
-		"""
-
 class ThreeCyborgsTile(MapTile):
 	def intro_text(self):
 		return """
-		There are lots of shelves full of dirt and junk. 
+		There are lots of shelves full of parts, dirt and junk. 
 		You can see a stand with three cyborgs on it. 
-		They look like they were abandoned for some unknown reason.
+		They look asleep and abandoned for some reason.
+		"""
+
+class StartTile(MapTile):
+	def intro_text(self):
+		return """
+		This is the place where you woke up. 
+		There's only an enormous wall with a strange drawing on it.
 		"""
 
 class CrystalMachineTile(MapTile):
@@ -43,7 +44,26 @@ class CrystalMachineTile(MapTile):
 		You look carefully at the panel and see a red button, a keypad and a holographic display.
 		"""
 
+class CenterTile(MapTile):
+	def intro_text(self):
+		return """
+		You walk through a plastic curtain and find yourself in an isolated chamber.
+		There are doors on your left and right.
+		In the center there's a drawing, it seems a labyrinth ...
+		To the north there's a long and dark corridor.
+		"""
+
+class ExitTile(MapTile):
+	def intro_text(self):
+		return """
+		After walking for a while you arrive to a large room.
+		Big lights and pure white walls are so reflective that you can barely open your eyes.
+		The only thing here is an artifact like a ring. It's void within.
+		"""
+
 room1_map = [
+	[None,ExitTile(1,0),None]
+	[None,CenterTile(1,1),None]
 	[ThreeCyborgsTile(0,2),StartTile(1,2),CrystalMachineTile(2,2)]
 ]
 
@@ -123,29 +143,36 @@ three_blank_lines()
 
 shpause()
 
-print("Synopsis: It's the year 2050. After the climate breakdown, life on the surface of the planet")
-print("became impossible ... Humans and cyborgs started to live in subterranean megacities where ")
-print("the ability to survive is a must. ")
-print()
+print("""
+                                 Synopsis: 
+
+It's the year 2050. After the climate breakdown, life on the surface of the planet
+became impossible ... Humans and cyborgs started to live in subterranean megacities where 
+the ability to survive is a must. 
+""")
 
 lpause()
 
-print("In this wicked world, you're a female cyborg called Alyssa, a basic pleasure model. ")
-print("You play sex with rich women and men in exchange for Qtrits, the cryptocurrency ")
-print("that wealthy people uses in the underground.")
-print()
+print("""
+In this wicked world, you're a female cyborg called Alyssa, a basic pleasure model. 
+You play sex with rich women and men in exchange for Qtrits, the cryptocurrency 
+that wealthy people uses in the underground.
+""")
 
 lpause()
 
-print("Your problems start when you meet with a customer called Anastasia, who dates you on a friday")
-print("night at the artificial lake on Sector 9. She wanted to enjoy sex in a public space so you")
-print("both agreed to walk into a darker zone of the artificial woods ...")
-print()
+print("""
+Your problems start when you meet with a customer called Anastasia, who dates you on a friday
+night at the artificial lake on Sector 9. She wanted to enjoy sex in a public space so you
+both agreed to walk into a darker zone of the artificial woods ...
+""")
 
 lpause()
 
-print("She offered you some kind of marijuana joint and after smoking for a while ...")
-print("you fell asleep ..")
+print("""
+She offered you some kind of marijuana joint and after smoking for a while ...
+you fell asleep ... 
+""")
 
 three_blank_lines()
 
@@ -157,12 +184,13 @@ three_blank_lines()
 
 shpause()
 
-print("You awake ... After opening your eyes all you can see is an enormous room ... ")
-print("Maybe an hangar or something like that ...")
-print("The light is dim but it seems a large location, maybe a military facility, who knows ...")
-print("It seems that you're alone and all you can hear is silence ...")
-print("Maybe you should start to explore this place and try to find the exit ...")
-print()
+print("""
+You awake ... After opening your eyes all you can see is an enormous room ... 
+Maybe an hangar or something like that ...
+The light is dim but it seems a large location, maybe a military facility, who knows ...
+It seems that you're alone and all you can hear is silence ...
+Maybe you should start to explore this place and try to find the exit ...
+""")
 
 play()
 
