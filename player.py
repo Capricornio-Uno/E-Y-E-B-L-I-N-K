@@ -10,10 +10,8 @@ class Player:
 						  items.Videophone(),
 						  items.ShockStick()]
 
-    def print_inventory(self):
-        print("Inventory:")
-        for item in self.inventory:
-            print('*' + str(item))
-
-	
+	def print_inventory(self):
+	        print("Inventory:")
+	        for item in self.inventory:
+	            print('*' + str(item))
 
