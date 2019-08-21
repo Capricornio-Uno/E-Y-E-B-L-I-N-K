@@ -11,7 +11,8 @@ class Player:
 						  items.ShockStick()]
 
 	def print_inventory(self):
-	        print("Inventory:")
+	        print()
+		print("Inventory:")
 	        for item in self.inventory:
 	            print('*' + str(item))
 
