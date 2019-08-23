@@ -8,22 +8,40 @@
 
 '''
 
-from player import Player
+# ============================== THINGS THAT I'M TESTING ====================================
 
-import time
+# This will print the output in a more cinematic way
+
+'''
+import sys
+
+BAUD = 1200
+
+def baudout(s):
+    for c in s:
+        sleep(9. / BAUD)  # 8 bits + 1 stop bit @ the given baud rate
+        sys.stdout.write(c)
+        sys.stdout.flush()
+
+ baudout(game.output)
+'''
+ 
+
+from player import Player
+from time import sleep
 	
 # ========================================== Functions ========================================
-
+  	     
 def three_blank_lines(): # Spaces between paragraphs
 	print()
 	print()
 	print()
 
 def shpause(): # short pause in the narrative
-	time.sleep(3)
+	sleep(3)
 
 def lpause(): # long pause in the narrative
-	time.sleep(7)
+	sleep(7)
 
 def get_player_command(): # Player prompt
 	print()
@@ -46,7 +64,7 @@ def play(): # Main loop
 		else:
 			print("Invalid action")
 
-# ============================================== PROGRAM ============================================
+# ==================================== NARRATIVE ================================================
 
 three_blank_lines()
 
