@@ -38,7 +38,7 @@ class CrystalMachineTile(MapTile):
 class CenterTile(MapTile):
 	def intro_text(self):
 		return """
-		You walk through a plastic curtain and find yourself in an isolated chamber.
+		You walk through a plastic curtain and find yourself in another chamber.
 		There are doors on your left and right.
 		In the center there's a drawing, it seems a labyrinth ...
 		To the north there's a long and dark corridor.
@@ -48,8 +48,9 @@ class ExitTile(MapTile):
 	def intro_text(self):
 		return """
 		After walking for a while you arrive to a large room.
-		Big lights and pure white walls are so reflective that you can barely open your eyes.
+		Poweful lights and pure white walls are so bright that you can barely open your eyes.
 		The only thing here is an artifact like a ring. It's void within.
+		It has flashing lights on it.
 		"""
 
 room1_map = [
