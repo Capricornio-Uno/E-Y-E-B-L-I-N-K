@@ -12,7 +12,7 @@ class Player:
 
 	def print_inventory(self):
 	        print()
-		print("Inventory:")
+	        print("Inventory:")
 	        for item in self.inventory:
-	            print('*' + str(item))
+	            print('- ' + str(item))
 

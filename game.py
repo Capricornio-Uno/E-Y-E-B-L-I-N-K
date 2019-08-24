@@ -68,12 +68,12 @@ def play(): # Main loop
 
 three_blank_lines()
 
-print("               _____                         __          ")
-print("              |  __ \                       /_ |         ")
-print("              | |__) |___   ___  _ __ ___    | |         ")
-print("              |  _  // _ \ / _ \| '_ ` _ \   | |         ")
-print("              | | \ \ (_) | (_) | | | | | |  | |         ")
-print("              |_|  \_\___/ \___/|_| |_| |_|  |_|         ")
+print("                       _____                         __          ")
+print("                      |  __ \                       /_ |         ")
+print("                      | |__) |___   ___  _ __ ___    | |         ")
+print("                      |  _  // _ \ / _ \| '_ ` _ \   | |         ")
+print("                      | | \ \ (_) | (_) | | | | | |  | |         ")
+print("                      |_|  \_\___/ \___/|_| |_| |_|  |_|         ")
 
 three_blank_lines()
 
@@ -84,30 +84,30 @@ print("""
 
 It's the year 2050. After the climate breakdown, life on the surface of the planet
 became impossible ... Humans and cyborgs started to live in subterranean megacities where 
-the ability to survive is a must. 
+everyone struggles to survive. 
 """)
 
 lpause()
 
 print("""
-In this wicked world, you're a female cyborg called Alyssa, a basic pleasure model. 
-You play sex with rich women and men in exchange for Qtrits, the cryptocurrency 
-that wealthy people uses in the underground.
+In this wicked world, you're a little girl called Valeria. You survive collecting and selling
+junk, hacking machines and stealing Qtrits, the cryptocurrency that wealthy people uses in
+the underground.  
 """)
 
 lpause()
 
 print("""
-Your problems start when you meet with a customer called Anastasia, who dates you on a friday
-night at the artificial lake on Sector 9. She wanted to enjoy sex in a public space so you
-both agreed to walk into a darker zone of the artificial woods ...
+One night you're coming back to your cabin to get some rest and you find a strange woman
+waiting at the door of your block. She asks you for an adress. You try to run without
+answering nothing but it's too late. A protocol droid appears from the shadows and grabs
+you while the woman forces you to inhale some kind of drug ...
 """)
 
 lpause()
 
 print("""
-She offered you some kind of marijuana joint and after smoking for a while ...
-you fell asleep ... 
+You fall asleep ... 
 """)
 
 three_blank_lines()
@@ -121,11 +121,11 @@ three_blank_lines()
 shpause()
 
 print("""
-You awake ... After opening your eyes all you can see is an enormous room ... 
-Maybe an hangar or something like that ...
-The light is dim but it seems a large location, maybe a military facility, who knows ...
-It seems that you're alone and all you can hear is silence ...
-Maybe you should start to explore this place and try to find the exit ...
+You awake ... 
+After opening your eyes you find yourself in an empty room.
+There's only a wall with a strange drawing on it.
+There are doors to the east and the west.
+There's a plastic curtain to the north.
 """)
 
 play()

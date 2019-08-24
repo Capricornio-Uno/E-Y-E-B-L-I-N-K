@@ -22,7 +22,9 @@ class StartTile(MapTile):
 	def intro_text(self):
 		return """
 		This is the place where you woke up. 
-		There's only an enormous wall with a strange drawing on it.
+		There's only a wall with a strange drawing on it.
+		There are doors to the east and the west.
+		There's a plastic curtain to the north.
 		"""
 
 class CrystalMachineTile(MapTile):
