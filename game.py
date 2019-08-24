@@ -23,46 +23,48 @@ def baudout(s):
         sys.stdout.write(c)
         sys.stdout.flush()
 
- baudout(game.output)
+baudout()
 '''
  
-
-from player import Player
 from time import sleep
-	
+from player import Player
+import world
+    
 # ========================================== Functions ========================================
-  	     
+         
 def three_blank_lines(): # Spaces between paragraphs
-	print()
-	print()
-	print()
+    print()
+    print()
+    print()
 
 def shpause(): # short pause in the narrative
-	sleep(3)
+    sleep(1)
 
 def lpause(): # long pause in the narrative
-	sleep(7)
+    sleep(2)
 
 def get_player_command(): # Player prompt
-	print()
-	return input("What now? ")
+    print()
+    return input("What now? ")
 
 def play(): # Main loop
-	player = Player()
-	while True:
-		action_input = get_player_command()
-		if action_input == 'n':
-			print("You go north")
-		elif action_input == 's':
-			print("You go south")
-		elif action_input == 'e':
-			print("You go east")
-		elif action_input == 'w':
-			print("You go west")
-		elif action_input == 'i':
-			player.print_inventory()
-		else:
-			print("Invalid action")
+    player = Player()
+    while True:
+        room = world.tile_at(player.x, player.y)
+        print(room.intro_text())
+        action_input = get_player_command()
+        if action_input == 'n':
+            player.move_north()
+        elif action_input == 's':
+            player.move_south()
+        elif action_input == 'e':
+            player.move_east()
+        elif action_input == 'w':
+            player.move_west()
+        elif action_input == 'i':
+            player.print_inventory()
+        else:
+            print("Invalid action")
 
 # ==================================== NARRATIVE ================================================
 
@@ -123,9 +125,6 @@ shpause()
 print("""
 You awake ... 
 After opening your eyes you find yourself in an empty room.
-There's only a wall with a strange drawing on it.
-There are doors to the east and the west.
-There's a plastic curtain to the north.
 """)
 
 play()
