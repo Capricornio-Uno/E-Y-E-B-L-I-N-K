@@ -28,8 +28,8 @@ baudout()
  
 from time import sleep
 from player import Player
-import world
-    
+import world, pygame
+
 # ========================================== Functions ========================================
          
 def three_blank_lines(): # Spaces between paragraphs
@@ -65,10 +65,22 @@ def play(): # Main loop
             player.print_inventory()
         elif action_input == 'a':
             player.attack()
+        elif action_input == 'music off':
+            pygame.mixer.music.stop()
+        elif action_input == 'music on':
+            pygame.mixer.music.play(-1, 0.2)
         else:
-            print("Invalid action")
+            print("Invalid action")        
+                         
+                
+            
+        
 
 # ==================================== NARRATIVE ================================================
+
+pygame.init() # music
+pygame.mixer.music.load('Kai_Engel-Interception.mp3')
+pygame.mixer.music.play(-1, 0.2)
 
 three_blank_lines()
 
@@ -124,10 +136,12 @@ print('''
 - Play with your keyboard. Enter commands in lower case.
 - Available commands are:
 
-'n' North    'i' Inventory
-'s' South    'a' Attack
-'e' East
+'n' North    'i' Inventory    'music on'  
+'s' South    'a' Attack       'music off'
+'e' East     
 'w' West
+
+Music:'Interception' by Kai Engel.
 ''')
 
 three_blank_lines()
