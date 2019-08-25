@@ -10,10 +10,10 @@ class Object:
         return self.name
 
 
-class Handbag(Object):
+class GrapheneBag(Object):
     def __init__(self):
-        self.name = "Handbag"
-        self.description = "It's a composite graphene bag. You store your things on it."
+        self.name = "Graphene bag"
+        self.description = "It's a composite graphene bag. You can store things on it."
         self.damage = 2
     
 class Videophone(Object):
@@ -25,5 +25,5 @@ class Videophone(Object):
 class ShockStick(Object):
     def __init__(self):
         self.name = "ShockStick"
-        self.description = "It's a self defense weapon. You always carry this with you."
+        self.description = "It's a self defense weapon. Pressing a switch releases an energy blast."
         self.damage = 8

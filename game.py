@@ -63,6 +63,8 @@ def play(): # Main loop
             player.move_west()
         elif action_input == 'i':
             player.print_inventory()
+        elif action_input == 'a':
+            player.attack()
         else:
             print("Invalid action")
 

@@ -86,9 +86,12 @@ class EnemyTile(MapTile):
 
     def intro_text(self):
         if self.enemy.is_alive():
-            return " A {} is here!".format(self.enemy.name)
+            return "The {} wants to terminate you!".format(self.enemy.name)
         else:
-            return "You destroyed the {}.".format(self.enemy.name)
+            return '''
+    ...
+    
+    There's nothing here but the remainings of some droids.'''
 
 world_map = [
     [EnemyTile(0,0),ExitTile(1,0),EnemyTile(2,0)],
