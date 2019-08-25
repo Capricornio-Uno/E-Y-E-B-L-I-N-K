@@ -116,7 +116,17 @@ three_blank_lines()
 
 lpause()
 
-print("Instructions: Play with your keyboard. Enter commands in lower case (n,s,e,w, get lamp ...)")
+print('''
+              Instructions:
+
+- Play with your keyboard. Enter commands in lower case.
+- Available commands are:
+
+'n' North    'i' Inventory
+'s' South    'a' Attack
+'e' East
+'w' West
+''')
 
 three_blank_lines()
 

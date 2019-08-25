@@ -2,6 +2,9 @@
 
 # ====================================== WORLD ================================================
 
+import enemies
+import random
+
 class MapTile:
     def __init__(self, x, y):
         self.x = x
@@ -71,14 +74,30 @@ class ExitTile(MapTile):
         It has flashing lights on it.
         """
 
+class EnemyTile(MapTile):
+    def __init__(self, x, y):
+        r = random.random()
+        if r < 0.75:
+            self.enemy = enemies.GlassSpider()
+        else:
+            self.enemy = enemies.Guardian()
+
+        super().__init__(x,y)
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            return " A {} is here!".format(self.enemy.name)
+        else:
+            return "You destroyed the {}.".format(self.enemy.name)
+
 world_map = [
-    [None,ExitTile(1,0),None],
+    [EnemyTile(0,0),ExitTile(1,0),EnemyTile(2,0)],
     [DesertTile(0,1),CenterTile(1,1),OceanTile(2,1)],
     [ThreeCyborgsTile(0,2),StartTile(1,2),CrystalMachineTile(2,2)]
 ]
 
 def tile_at(x,y): # locates the tile at a coordinate
-    if x < 0 or y < 0: 
+    if x < 0 or y < 0: # 'y > 0' creates a strange map, something like a sphere or 'Pacman' effect
         return None
     try:
         return world_map[y][x]
