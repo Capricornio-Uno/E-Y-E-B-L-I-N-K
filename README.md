@@ -1,6 +1,4 @@
-# Room-1
-A dystopic and futuristic text adventure
-
+# E Y E B L I N K
 
 It's the year 2050. After the climate breakdown, life on the surface of the planet
 became impossible ... Humans and cyborgs started to live in subterranean megacities where 
