@@ -8,3 +8,5 @@ In this wicked world, you're a little girl called Valeria. You survive collectin
 junk, hacking machines and stealing Qtrits, the cryptocurrency that wealthy people uses in
 the underground.  
 
+One night you're kidnapped by some strange woman and after being forced to inhale some
+kind of substance you fall sleep ...
