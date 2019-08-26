@@ -84,12 +84,13 @@ pygame.mixer.music.play(-1, 0.2)
 
 three_blank_lines()
 
-print("                       _____                         __          ")
-print("                      |  __ \                       /_ |         ")
-print("                      | |__) |___   ___  _ __ ___    | |         ")
-print("                      |  _  // _ \ / _ \| '_ ` _ \   | |         ")
-print("                      | | \ \ (_) | (_) | | | | | |  | |         ")
-print("                      |_|  \_\___/ \___/|_| |_| |_|  |_|         ")
+print("     #######    #     #    #######    ######     #          ###    #     #    #    # ")
+print("     #           #   #     #          #     #    #           #     ##    #    #   #  ")
+print("     #            # #      #          #     #    #           #     # #   #    #  #   ")
+print("     #####         #       #####      ######     #           #     #  #  #    ###    ")
+print("     #             #       #          #     #    #           #     #   # #    #  #   ")
+print("     #             #       #          #     #    #           #     #    ##    #   #  ")
+print("     #######       #       #######    ######     #######    ###    #     #    #    # ")
 
 three_blank_lines()
 
@@ -117,7 +118,7 @@ print("""
 One night you're coming back to your cabin to get some rest and you find a strange woman
 waiting at the door of your block. She asks you for an adress. You try to run without
 answering nothing but it's too late. A protocol droid appears from the shadows and grabs
-you while the woman forces you to inhale some kind of drug ...
+you while the woman forces you to inhale some kind of substance ...
 """)
 
 lpause()
