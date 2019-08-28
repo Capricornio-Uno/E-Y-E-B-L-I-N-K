@@ -13,6 +13,9 @@ class MapTile:
     def intro_text(self):
         raise NotImplementedError("Create a subclass instead!")
 
+    def modify_player(self,player):
+        pass 
+
 
 class ThreeCyborgsTile(MapTile):
     def intro_text(self):
@@ -79,19 +82,32 @@ class EnemyTile(MapTile):
         r = random.random()
         if r < 0.75:
             self.enemy = enemies.GlassSpider()
+            self.alive_text = "A Glass Spider attacks you!"
+            self.dead_text = '''The floor is full of Glass Spider junk.
+    ...
+    
+    There's nothing more here but the remainings of some droids.''' 
         else:
             self.enemy = enemies.Guardian()
+            self.alive_text = "A Guardian attacks you!"
+            self.dead_text =  '''The floor is full of Guardian parts.
+    ...
+    
+    There's nothing more here but the remainings of some droids.''' 
 
         super().__init__(x,y)
 
     def intro_text(self):
         if self.enemy.is_alive():
-            return "The {} wants to terminate you!".format(self.enemy.name)
-        else:
-            return '''
-    ...
-    
-    There's nothing here but the remainings of some droids.'''
+            return self.alive_text 
+        else: 
+            return self.dead_text
+        
+
+    def modify_player(self, player):
+        if self.enemy.is_alive():
+            player.hp = player.hp - self.enemy.damage
+            print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, player.hp))
 
 world_map = [
     [EnemyTile(0,0),ExitTile(1,0),EnemyTile(2,0)],
@@ -100,8 +116,8 @@ world_map = [
 ]
 
 def tile_at(x,y): # locates the tile at a coordinate
-    if x < 0 or y < 0: # 'y > 0' creates a strange map, something like a sphere or 'Pacman' effect
-        return None
+    if x < 0 or y < 0: 
+        return None                                                                               
     try:
         return world_map[y][x]
     except IndexError:

@@ -13,6 +13,7 @@ class Player:
 
         self.x = 1  # Player starts at this tile
         self.y = 2
+        self.hp = 100
 
     def move(self, dx, dy):
         self.x += dx
