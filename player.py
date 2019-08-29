@@ -9,7 +9,8 @@ class Player:
     def __init__(self):
         self.inventory = [items.GrapheneBag(),
                           items.Videophone(),
-                          items.ShockStick()]
+                          items.ShockStick(),
+                          items.RecoveryPill()]
 
         self.x = 1  # Player starts at this tile
         self.y = 2

@@ -2,6 +2,7 @@
 
 # ====================================== ITEMS ============================================
 
+
 class Object:
     def __init__(self):
         raise NotImplementedError("Do not create raw objects.")
@@ -27,3 +28,19 @@ class ShockStick(Object):
         self.name = "ShockStick"
         self.description = "It's a self defense weapon. Pressing a switch releases an energy blast."
         self.damage = 8
+
+
+class Consumable:
+    def __init__(self):
+        raise NotImplementedError("Do not create raw Consumable objects.")
+
+    def __str__(self):
+        return "{} (+{} HP)".format(self.name, self.healing_value)
+
+
+class RecoveryPill(Consumable):
+    def __init__(self):
+        self.name = "Recovery pill"
+        self.healing_value = 10
+
+
