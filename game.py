@@ -1,8 +1,8 @@
 ''' 
 
-    Room 1
+    E Y E B L I N K
 
-    A text adventure written by Capricornio-Uno (miguelreinoso7@gmail.com)
+    A text adventure written by Miguel Reinoso (miguelreinoso7@gmail.com)
 
     August 2019
 
@@ -47,7 +47,7 @@ def get_player_command(): # Player prompt
     print()
     return input("What now? ")
 
-def play(): # Main loop
+def play(): # Game loop
     player = Player()
     while True:
         room = world.tile_at(player.x, player.y)
@@ -66,6 +66,8 @@ def play(): # Main loop
             player.print_inventory()
         elif action_input == 'a':
             player.attack()
+        elif action_input == 'h':
+        	player.heal()
         elif action_input == 'music off':
             pygame.mixer.music.stop()
         elif action_input == 'music on':
@@ -140,7 +142,7 @@ print('''
 
 'n' North    'i' Inventory    'music on'  
 's' South    'a' Attack       'music off'
-'e' East     
+'e' East     'h' Heal
 'w' West
 
 Music:'Interception' by Kai Engel.

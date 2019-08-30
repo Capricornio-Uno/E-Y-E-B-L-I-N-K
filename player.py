@@ -1,4 +1,4 @@
-# Room 1
+# E Y E B L I N K
 
 # ========================================== PLAYER ===============================================
 
@@ -63,3 +63,27 @@ class Player:
             print("You destroyed the {}!".format(enemy.name))
         else:
             print("{} energy is now {}".format(enemy.name, enemy.hp))            
+
+    def heal(self):
+        consumables = [item for item in self.inventory if isinstance(item, items.Consumable)]
+
+        if not consumables:
+            print("You don't have any item to heal you!")
+            return
+
+        for i, item in enumerate(consumables,1):
+            print("Choose an item to use to heal: ")
+            print("{}. {}".format(i, item))
+
+        valid = False
+
+        while not valid:
+            choice = input("")
+            try:
+                to_eat = consumables[int(choice) - 1]
+                self.hp = min(100, self.hp + to_eat.healing_value)
+                self.inventory.remove(to_eat)
+                print("Current HP: {}".format(self.hp))
+                valid = True
+            except (ValueError, IndexError):
+                print("Invalid choice, try again.")
